@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem("litrix-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <title>Verify a Training Register Record | Litrix</title>
 <meta name="description" content="Verify the authenticity of a Litrix EU AI Act Article 4 training register entry using its verification code.">
 <link rel="canonical" href="https://litrix.eu/verify.html">
@@ -15,7 +16,10 @@
 <header class="site-header">
   <div class="container-wide">
     <a class="wordmark" href="/">Litrix<span class="article4">Article 4 · AI Literacy</span></a>
-    <nav class="site-nav"><a href="/login.html">Log in</a></nav>
+    <nav class="site-nav">
+      <a href="/login.html">Log in</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
+    </nav>
   </div>
 </header>
 
@@ -68,7 +72,7 @@ async function lookup(code) {
     resultEl.innerHTML =
       '<div class="dossier">' +
       '<p class="dossier-label">Verified record</p>' +
-      '<div class="stamp stamp-low" style="border-color:#2f4a3d;color:#2f4a3d;">Genuine record</div>' +
+      '<div class="stamp stamp-low">Genuine record</div>' +
       "<table style=\"margin-top:18px;\">" +
       "<tr><th>Verification code</th><td class=\"mono\">" + e.verification_code + "</td></tr>" +
       "<tr><th>Organization</th><td>" + e.organization + "</td></tr>" +
@@ -82,5 +86,6 @@ async function lookup(code) {
   }
 }
 </script>
+<script src="/js/theme.js"></script>
 </body>
 </html>

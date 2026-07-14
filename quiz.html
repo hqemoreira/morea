@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem("litrix-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <title>Comprehension Check | Litrix</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,10 @@
 <header class="site-header">
   <div class="container-wide">
     <a class="wordmark" href="/">Litrix<span class="article4">Article 4 · AI Literacy</span></a>
-    <nav class="site-nav"><a href="/login.html">Log in</a></nav>
+    <nav class="site-nav">
+      <a href="/login.html">Log in</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
+    </nav>
   </div>
 </header>
 
@@ -29,6 +33,7 @@
   <div class="container"><p>Litrix &middot; EU AI Act Article 4 compliance and literacy platform</p></div>
 </footer>
 
+<script src="/js/theme.js"></script>
 <script src="/js/quiz.js"></script>
 <script>
 if (!sessionStorage.getItem("litrix_intake")) {
