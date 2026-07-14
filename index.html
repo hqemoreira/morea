@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Article 4 AI Literacy Training & Compliance Register | Litrix</title>
-<meta name="description" content="Article 4 of the EU AI Act has required staff AI literacy since 2 February 2025. Litrix gives your team a 10-minute personalized module and a dated, SHA-256-verified training register in one sitting.">
+<meta name="description" content="Article 4 of the EU AI Act has required staff AI literacy since 2 February 2025. Litrix gives your team a 10-minute personalized module and a dated, independently verifiable training register entry in one sitting.">
 <link rel="canonical" href="https://litrix.eu/">
 <meta name="robots" content="index, follow">
 
@@ -68,13 +68,18 @@
     },
     {
       "@type": "Question",
+      "name": "We don't build AI — does Article 4 still apply to us?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if your staff use AI systems at all. The Act defines \"deployer\" broadly: if your team uses tools like Microsoft Copilot, ChatGPT Enterprise, or an AI-powered recruiting filter in the course of their work, your company is a deployer under the law — not just companies building their own models." }
+    },
+    {
+      "@type": "Question",
       "name": "What counts as sufficient AI literacy?",
       "acceptedAnswer": { "@type": "Answer", "text": "The Act does not mandate one fixed curriculum. It requires measures proportionate to each staff member's role, technical background, and the specific AI systems they use — which is why a generic course is a weaker compliance posture than a documented, role-aware training record." }
     },
     {
       "@type": "Question",
       "name": "Do we need to keep proof of training?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The Act does not prescribe a record format, but you must be able to demonstrate the measures you took if a national market surveillance authority asks. A dated, verifiable record is the practical way to do that — which is what a Litrix training register entry is." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The Act does not prescribe a record format, but you must be able to demonstrate the measures you took if a national market surveillance authority asks. Every Litrix training record gets a permanent verification ID that can be shared with auditors and regulators — that's the practical answer." }
     },
     {
       "@type": "Question",
@@ -101,7 +106,7 @@
   <section class="container" style="padding: 64px 24px 40px;">
     <p class="dossier-label">EU AI Act &middot; Article 4 &middot; in force since 2 February 2025</p>
     <h1>Article 4 is already in force. Can you prove your team is trained?</h1>
-    <p style="font-size: 1.15rem;">Article 4 of the EU AI Act made AI literacy mandatory for every company deploying AI in the EU &mdash; not a future deadline, a standing obligation since 2 February 2025. Litrix gives each employee a personalized 10-minute module and produces a dated, SHA-256-verified training register entry a regulator can actually check.</p>
+    <p style="font-size: 1.15rem;">Article 4 of the EU AI Act made AI literacy mandatory for every company deploying AI in the EU &mdash; not a future deadline, a standing obligation since 2 February 2025. Litrix gives each employee a personalized 10-minute module and produces a dated training register entry with a permanent verification ID that auditors and regulators can check.</p>
     <p>
       <a class="btn btn-primary" href="/assess.html">Run the free exposure assessment</a>
       <a class="btn btn-secondary" href="/verify.html">Verify an existing record</a>
@@ -111,6 +116,14 @@
   <section class="container" style="padding: 20px 24px 50px;">
     <div class="dossier">
       <h2>How it works</h2>
+      <div class="flow-diagram" aria-hidden="true">
+        <span class="flow-step">Assessment</span><span class="flow-arrow">&rarr;</span>
+        <span class="flow-step">Training</span><span class="flow-arrow">&rarr;</span>
+        <span class="flow-step">Quiz</span><span class="flow-arrow">&rarr;</span>
+        <span class="flow-step">Certificate</span><span class="flow-arrow">&rarr;</span>
+        <span class="flow-step">Register</span><span class="flow-arrow">&rarr;</span>
+        <span class="flow-step">Verification</span>
+      </div>
       <ol>
         <li><strong>6-question intake.</strong> Company size, sector, how you use AI, and your role.</li>
         <li><strong>Instant exposure classification.</strong> A deterministic, on-the-spot Article 4 exposure stamp &mdash; no waiting on an API.</li>
@@ -119,6 +132,23 @@
         <li><strong>Training register entry.</strong> Dated, SHA-256-verified, exportable as JSON, printable on demand.</li>
       </ol>
       <p><a class="btn btn-primary" href="/assess.html">Start the assessment &mdash; free</a></p>
+    </div>
+  </section>
+
+  <section class="container" style="padding: 0 24px 50px;">
+    <h2>What a completed record looks like</h2>
+    <div class="dossier">
+      <p class="dossier-label">Sample record &mdash; not a real verification</p>
+      <div class="stamp stamp-low" style="margin-bottom:18px;">Genuine record</div>
+      <table>
+        <tr><th>Employee</th><td>Jane Doe</td></tr>
+        <tr><th>Role</th><td>HR / People</td></tr>
+        <tr><th>Training completed</th><td>AI Literacy for HR &amp; Recruitment</td></tr>
+        <tr><th>Score</th><td>3 / 3</td></tr>
+        <tr><th>Date</th><td>14 July 2026</td></tr>
+        <tr><th>Verification ID</th><td class="mono">LTRX-SAMP-LE00-0000-0000-0000</td></tr>
+      </table>
+      <p class="faint" style="margin-top:14px;">Every real record gets a unique verification ID your team, auditors, or regulators can check at <a href="/verify.html">litrix.eu/verify.html</a> &mdash; no account required.</p>
     </div>
   </section>
 
@@ -138,12 +168,16 @@
       <p>Any organization acting as a provider or deployer of an AI system in the EU, regardless of size. There is no SME exemption from the literacy obligation itself.</p>
     </div>
     <div class="dossier">
+      <h3>We don't build AI &mdash; does Article 4 still apply to us?</h3>
+      <p>Yes, if your staff use AI systems at all. The Act defines "deployer" broadly: if your team uses tools like Microsoft Copilot, ChatGPT Enterprise, or an AI-powered recruiting filter in the course of their work, your company is a deployer under the law &mdash; not just companies building their own models.</p>
+    </div>
+    <div class="dossier">
       <h3>What counts as sufficient AI literacy?</h3>
       <p>There is no single fixed curriculum. The Act requires measures proportionate to each person's role, technical background, and the specific AI systems they use &mdash; which is why a generic course is a weaker compliance posture than a documented, role-aware training record.</p>
     </div>
     <div class="dossier">
       <h3>Do we need to keep proof of training?</h3>
-      <p>The Act doesn't prescribe a record format, but you must be able to demonstrate your measures if a national market surveillance authority asks. A dated, verifiable record is the practical answer &mdash; that's what a Litrix register entry is for.</p>
+      <p>The Act doesn't prescribe a record format, but you must be able to demonstrate your measures if a national market surveillance authority asks. Every Litrix training record gets a permanent verification ID that can be shared with auditors and regulators &mdash; that's the practical answer.</p>
     </div>
     <div class="dossier">
       <h3>What happens if we don't comply?</h3>

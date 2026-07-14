@@ -228,6 +228,29 @@ th {
   color: var(--ink-faint);
 }
 
+.flow-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 24px;
+}
+.flow-step {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.flow-arrow {
+  color: var(--ink-faint);
+  font-size: 1.1rem;
+}
+
 .notice {
   border-left: 3px solid var(--accent);
   background: rgba(47, 74, 61, 0.06);
