@@ -131,17 +131,28 @@ code, .mono { font-family: var(--mono); }
   padding-bottom: 18px;
 }
 .wordmark {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   color: var(--ink);
   text-decoration: none;
-  letter-spacing: 0.02em;
+}
+.wordmark:hover { opacity: 1; }
+.logo-mark {
+  width: 26px;
+  height: 26px;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+.wordmark-text {
   display: inline-flex;
   flex-direction: column;
   line-height: 1.1;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
 }
-.wordmark:hover { opacity: 1; }
 .wordmark .article4 {
   font-family: var(--mono);
   font-size: 0.62rem;
@@ -390,12 +401,16 @@ footer.site-footer {
   padding: 22px 24px;
 }
 .footer-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-family: var(--serif);
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--ink);
   text-decoration: none;
 }
+.footer-mark .logo-mark { width: 17px; height: 17px; }
 .footer-status {
   margin: 0;
   font-family: var(--mono);
