@@ -1,0 +1,14 @@
+# Litrix
+
+> Litrix is an EU AI Act Article 4 compliance and AI literacy platform for European SMEs. Article 4 of Regulation (EU) 2024/1689 has required AI literacy training for staff operating AI systems since 2 February 2025. Litrix runs a free 6-question exposure assessment, a personalized 10-minute training module, a 3-question comprehension check, and produces a dated, SHA-256-verified training register entry that a company can export or a regulator can verify.
+
+## Key facts
+- Article 4 (AI literacy) applies since 2 February 2025 — a Chapter I general provision, not part of the 2 August 2026 high-risk obligations.
+- Applies to any provider or deployer of an AI system in the EU; no SME exemption.
+- Non-compliance with general obligations (including Article 4) can be penalized under Article 99(4) up to €15 million or 3% of global annual turnover.
+- Litrix's training register entries are independently verifiable at https://litrix.eu/verify.html by verification code, without requiring an account.
+
+## Pages
+- [Homepage](https://litrix.eu/): product overview and Article 4 FAQ
+- [Free assessment](https://litrix.eu/assess.html): 6-question intake and exposure classification
+- [Verify a record](https://litrix.eu/verify.html): public lookup of a training register entry by verification code

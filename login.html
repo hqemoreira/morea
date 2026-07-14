@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log In | Litrix</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container-wide">
+    <a class="wordmark" href="/">Litrix<span class="article4">Article 4 · AI Literacy</span></a>
+    <nav class="site-nav"><a href="/signup.html">Create account</a></nav>
+  </div>
+</header>
+
+<main class="container" style="max-width:480px; padding: 48px 24px 70px;">
+  <h1>Log in</h1>
+
+  <form id="login-form" class="dossier">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+
+    <div id="form-error"></div>
+
+    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+  </form>
+
+  <p class="faint" style="margin-top:16px;">No account yet? <a href="/signup.html">Create one</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="container"><p>Litrix &middot; EU AI Act Article 4 compliance and literacy platform</p></div>
+</footer>
+
+<script>
+document.getElementById("login-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const errorEl = document.getElementById("form-error");
+  errorEl.innerHTML = "";
+
+  const res = await fetch("/api/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value
+    })
+  });
+  const data = await res.json();
+
+  if (!res.ok) {
+    errorEl.innerHTML = '<div class="notice notice-error">' + (data.error || "Something went wrong.") + "</div>";
+    return;
+  }
+
+  if (sessionStorage.getItem("litrix_quiz")) {
+    window.location.href = "/register.html";
+  } else if (data.user && data.user.company_id) {
+    window.location.href = "/workspace.html";
+  } else {
+    window.location.href = "/";
+  }
+});
+</script>
+</body>
+</html>

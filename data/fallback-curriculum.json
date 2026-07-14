@@ -1,0 +1,149 @@
+{
+  "general": {
+    "title": "AI Literacy for General Business Use",
+    "sections": [
+      {
+        "heading": "What Article 4 actually asks of you",
+        "body": "Article 4 of the EU AI Act requires your employer to make sure people who use or are affected by AI systems understand, at a level proportionate to their role, what those systems do, where they can go wrong, and when to involve a human. It is not a request for a certificate — it is an ongoing obligation to keep staff capable of using AI responsibly."
+      },
+      {
+        "heading": "Where AI shows up in everyday work",
+        "body": "Most general-business AI exposure comes from tools staff already use: chatbots, writing assistants, meeting summarizers, and search-style copilots. Each of these can produce confident-sounding output that is wrong, outdated, or subtly biased. Treat AI output as a draft from a fast but occasionally unreliable colleague, not a finished answer."
+      },
+      {
+        "heading": "Practical habits that satisfy the obligation",
+        "body": "Verify factual claims before they leave your desk. Never paste confidential or personal data into a public AI tool without checking your company's data policy. Know which decisions in your workflow are AI-assisted versus AI-made, and flag anything that affects a customer, colleague, or job applicant for human review."
+      },
+      {
+        "heading": "What good documentation looks like",
+        "body": "A dated record showing who was trained, on what, and when they demonstrated understanding is the difference between a compliance posture and a compliance claim. That record is what a market surveillance authority will actually ask to see."
+      }
+    ]
+  },
+  "education": {
+    "title": "AI Literacy for Education",
+    "sections": [
+      {
+        "heading": "What Article 4 actually asks of you",
+        "body": "In education settings, Article 4 requires staff who use AI tools for teaching, assessment support, or administration to understand their limits — particularly around fairness to students and the accuracy of AI-generated content."
+      },
+      {
+        "heading": "Where AI shows up in education",
+        "body": "Grading assistance, plagiarism detection, personalized learning tools, and administrative chatbots all carry risk: false positives in integrity checks, biased recommendation patterns, and AI-generated material presented to students without verification."
+      },
+      {
+        "heading": "Practical habits that satisfy the obligation",
+        "body": "Never let an AI system make a final decision about a student's grade, discipline, or eligibility without human review. Disclose to students and guardians when AI tools are used in ways that affect them. Check AI-generated learning material for accuracy before it reaches a classroom."
+      },
+      {
+        "heading": "What good documentation looks like",
+        "body": "Keep a dated record of which staff were trained on which tools, especially anyone using AI in assessment or admissions-adjacent workflows — these are the areas most likely to draw regulatory or parental scrutiny."
+      }
+    ]
+  },
+  "hr_recruitment": {
+    "title": "AI Literacy for HR & Recruitment",
+    "sections": [
+      {
+        "heading": "What Article 4 actually asks of you",
+        "body": "HR and recruitment sit close to the AI Act's higher-scrutiny territory: AI systems used in hiring, promotion, or termination decisions are treated as high-risk under Annex III. Article 4 literacy here means understanding exactly how any AI-assisted screening or ranking tool works before you rely on it."
+      },
+      {
+        "heading": "Where AI shows up in HR",
+        "body": "CV screening, candidate ranking, chatbot-based first-round interviews, and AI-written job descriptions are the common entry points. Each can encode bias from historical hiring data in ways that are not visible from the output alone."
+      },
+      {
+        "heading": "Practical habits that satisfy the obligation",
+        "body": "Never let an AI ranking or screening tool make the final call on a candidate — a human must review and be able to explain the decision. Ask vendors what data their tool was trained on and how they test for bias. Keep candidates informed when AI is part of the process, as most jurisdictions expect this as a baseline fairness measure."
+      },
+      {
+        "heading": "What good documentation looks like",
+        "body": "Document which HR staff were trained, on which specific tools, and when — this is the record most likely to be requested if a hiring decision is ever challenged."
+      }
+    ]
+  },
+  "financial": {
+    "title": "AI Literacy for Financial Services",
+    "sections": [
+      {
+        "heading": "What Article 4 actually asks of you",
+        "body": "Financial services already operate under heavy regulatory scrutiny, and AI systems used for credit scoring or fraud detection frequently fall under the AI Act's high-risk category. Article 4 literacy means staff must understand what a model is actually doing before they act on its output."
+      },
+      {
+        "heading": "Where AI shows up in financial services",
+        "body": "Credit scoring, fraud detection, robo-advice, and customer risk profiling are the highest-exposure use cases. These systems can systematically disadvantage certain customer groups if not properly understood and monitored."
+      },
+      {
+        "heading": "Practical habits that satisfy the obligation",
+        "body": "Understand the inputs and general logic of any scoring model your role relies on, even if you didn't build it. Escalate edge cases rather than overriding them silently. Know your institution's process for a customer who disputes an AI-influenced decision."
+      },
+      {
+        "heading": "What good documentation looks like",
+        "body": "Keep dated, role-specific training records for anyone interpreting or acting on model output — this pairs with existing financial-conduct documentation you likely already maintain."
+      }
+    ]
+  },
+  "legal": {
+    "title": "AI Literacy for Legal Services",
+    "sections": [
+      {
+        "heading": "What Article 4 actually asks of you",
+        "body": "Legal professionals using AI for research, drafting, or case analysis must understand the tool's failure modes well enough to catch them — courts have already sanctioned lawyers for uncritically submitting AI-fabricated citations."
+      },
+      {
+        "heading": "Where AI shows up in legal work",
+        "body": "Legal research assistants, contract review tools, and drafting copilots are the most common exposure points. These tools can fabricate case citations, misstate statutory text, or miss jurisdiction-specific nuance."
+      },
+      {
+        "heading": "Practical habits that satisfy the obligation",
+        "body": "Independently verify every citation and statutory reference an AI tool produces before it reaches a filing or a client. Treat AI-drafted analysis as a first pass, not a substitute for professional judgment. Be explicit with clients about where AI assisted in their matter."
+      },
+      {
+        "heading": "What good documentation looks like",
+        "body": "A dated record of which fee-earners were trained on which tools protects the firm as much as it protects clients — increasingly relevant as courts scrutinize AI use in filings."
+      }
+    ]
+  },
+  "healthcare": {
+    "title": "AI Literacy for Healthcare",
+    "sections": [
+      {
+        "heading": "What Article 4 actually asks of you",
+        "body": "Healthcare is one of the highest-scrutiny sectors under the AI Act. Diagnostic support, triage, and patient-risk-scoring tools frequently qualify as high-risk systems, and Article 4 requires clinical and administrative staff to understand a tool's limits before it influences patient care."
+      },
+      {
+        "heading": "Where AI shows up in healthcare",
+        "body": "Diagnostic imaging support, triage prioritization, administrative scheduling, and clinical documentation assistants are the main exposure points. An AI recommendation that looks authoritative is not a diagnosis."
+      },
+      {
+        "heading": "Practical habits that satisfy the obligation",
+        "body": "Never let an AI tool's output substitute for clinical judgment — treat it as one input among several. Understand the tool's known failure modes and population the training data represents. Escalate any AI-influenced decision that affects patient safety for full human review."
+      },
+      {
+        "heading": "What good documentation looks like",
+        "body": "Keep a dated record of which clinical and administrative staff were trained on which AI-assisted tools — this sits alongside existing clinical governance documentation your organization already maintains."
+      }
+    ]
+  },
+  "public_critical": {
+    "title": "AI Literacy for Public Sector & Critical Infrastructure",
+    "sections": [
+      {
+        "heading": "What Article 4 actually asks of you",
+        "body": "Public bodies and critical infrastructure operators face the highest baseline scrutiny under the AI Act, since decisions here affect public safety and access to services at scale. Article 4 requires staff to understand AI systems well enough to catch errors before they become public harm."
+      },
+      {
+        "heading": "Where AI shows up in this sector",
+        "body": "Eligibility determination, resource allocation, infrastructure monitoring, and public-facing chatbots are common exposure points. Errors here can affect large numbers of people simultaneously and are subject to public accountability."
+      },
+      {
+        "heading": "Practical habits that satisfy the obligation",
+        "body": "Maintain a clear human-in-the-loop process for any AI-influenced decision affecting eligibility, benefits, or safety. Understand and be able to explain, in plain language, how a system reached a given output. Report anomalies through your organization's existing incident process."
+      },
+      {
+        "heading": "What good documentation looks like",
+        "body": "A dated, auditable training record for staff operating AI-assisted systems is likely to be the first thing requested in any oversight review — treat it as core operational documentation, not paperwork."
+      }
+    ]
+  }
+}

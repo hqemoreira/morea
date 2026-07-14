@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprehension Check | Litrix</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container-wide">
+    <a class="wordmark" href="/">Litrix<span class="article4">Article 4 · AI Literacy</span></a>
+    <nav class="site-nav"><a href="/login.html">Log in</a></nav>
+  </div>
+</header>
+
+<main class="container" style="padding: 48px 24px 70px;">
+  <p class="dossier-label">Step 3 of 4 &middot; Comprehension check</p>
+  <h1>Three quick questions</h1>
+  <form id="quiz-form" class="dossier"></form>
+  <section id="result" class="dossier" style="display:none; margin-top:24px;"></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container"><p>Litrix &middot; EU AI Act Article 4 compliance and literacy platform</p></div>
+</footer>
+
+<script src="/js/quiz.js"></script>
+<script>
+if (!sessionStorage.getItem("litrix_intake")) {
+  window.location.href = "/assess.html";
+}
+
+const form = document.getElementById("quiz-form");
+
+LITRIX_QUIZ.forEach((q, qi) => {
+  const fieldset = document.createElement("fieldset");
+  const legend = document.createElement("legend");
+  legend.textContent = "Question " + (qi + 1) + " of " + LITRIX_QUIZ.length;
+  fieldset.appendChild(legend);
+
+  const label = document.createElement("h3");
+  label.textContent = q.question;
+  fieldset.appendChild(label);
+
+  q.options.forEach((opt) => {
+    const row = document.createElement("label");
+    row.className = "option-row";
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = q.id;
+    input.value = opt.value;
+    input.required = true;
+    row.appendChild(input);
+    row.appendChild(document.createTextNode(opt.label));
+    fieldset.appendChild(row);
+  });
+
+  form.appendChild(fieldset);
+});
+
+const submitBtn = document.createElement("button");
+submitBtn.type = "submit";
+submitBtn.className = "btn btn-primary btn-block";
+submitBtn.textContent = "Submit answers";
+form.appendChild(submitBtn);
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  let correctCount = 0;
+
+  LITRIX_QUIZ.forEach((q) => {
+    const chosen = data.get(q.id);
+    const correctOpt = q.options.find((o) => o.correct);
+    if (chosen === correctOpt.value) correctCount++;
+  });
+
+  const quizResult = {
+    score: correctCount,
+    total: LITRIX_QUIZ.length,
+    passed: correctCount === LITRIX_QUIZ.length,
+    completedAt: new Date().toISOString()
+  };
+  sessionStorage.setItem("litrix_quiz", JSON.stringify(quizResult));
+
+  const resultEl = document.getElementById("result");
+  resultEl.style.display = "block";
+
+  if (quizResult.passed) {
+    resultEl.innerHTML =
+      '<p class="dossier-label">Result</p><h2>' + correctCount + " / " + LITRIX_QUIZ.length + " correct</h2>" +
+      '<p>Comprehension confirmed. Generate your training register entry to complete this record.</p>' +
+      '<a class="btn btn-primary" href="/register.html">Generate training register entry</a>';
+  } else {
+    resultEl.innerHTML =
+      '<p class="dossier-label">Result</p><h2>' + correctCount + " / " + LITRIX_QUIZ.length + " correct</h2>" +
+      '<div class="notice notice-error">A couple of answers need another look before this counts as demonstrated comprehension.</div>' +
+      '<button class="btn btn-secondary" onclick="window.location.reload()">Try again</button>';
+  }
+  resultEl.scrollIntoView({ behavior: "smooth" });
+});
+</script>
+</body>
+</html>

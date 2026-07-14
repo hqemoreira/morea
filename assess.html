@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Article 4 Exposure Assessment | Litrix</title>
+<meta name="description" content="Six questions. Instant EU AI Act Article 4 exposure classification. No account required.">
+<link rel="canonical" href="https://litrix.eu/assess.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container-wide">
+    <a class="wordmark" href="/">Litrix<span class="article4">Article 4 · AI Literacy</span></a>
+    <nav class="site-nav">
+      <a href="/verify.html">Verify a Record</a>
+      <a href="/login.html">Log in</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding: 48px 24px 70px;">
+  <p class="dossier-label">Free exposure assessment</p>
+  <h1>Where does your company stand on Article 4?</h1>
+  <p>Six questions. Answers are scored instantly in your browser — nothing is sent anywhere until you choose to save a training record.</p>
+
+  <form id="assess-form" class="dossier"></form>
+
+  <section id="result" class="dossier" style="display: none; margin-top: 24px;"></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container"><p>Litrix &middot; EU AI Act Article 4 compliance and literacy platform</p></div>
+</footer>
+
+<script src="/js/classification.js"></script>
+<script>
+const form = document.getElementById("assess-form");
+
+LITRIX_QUESTIONS.forEach((q, qi) => {
+  const fieldset = document.createElement("fieldset");
+  const legend = document.createElement("legend");
+  legend.textContent = "Question " + (qi + 1) + " of " + LITRIX_QUESTIONS.length;
+  fieldset.appendChild(legend);
+
+  const label = document.createElement("h3");
+  label.textContent = q.label;
+  fieldset.appendChild(label);
+
+  q.options.forEach((opt, oi) => {
+    const row = document.createElement("label");
+    row.className = "option-row";
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = q.id;
+    input.value = opt.value;
+    input.required = true;
+    if (oi === 0) input.dataset.first = "true";
+    row.appendChild(input);
+    row.appendChild(document.createTextNode(opt.label));
+    fieldset.appendChild(row);
+  });
+
+  form.appendChild(fieldset);
+});
+
+const submitBtn = document.createElement("button");
+submitBtn.type = "submit";
+submitBtn.className = "btn btn-primary btn-block";
+submitBtn.textContent = "See my exposure classification";
+form.appendChild(submitBtn);
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const answers = {};
+  for (const q of LITRIX_QUESTIONS) answers[q.id] = data.get(q.id);
+
+  const result = litrixClassify(answers);
+  sessionStorage.setItem("litrix_intake", JSON.stringify(result));
+
+  const resultEl = document.getElementById("result");
+  resultEl.style.display = "block";
+  resultEl.innerHTML =
+    '<p class="dossier-label">Your result</p>' +
+    '<div class="stamp stamp-' + result.tier + '">' + result.tierLabel + '</div>' +
+    '<p style="margin-top:18px;">Based on your answers, your organization falls into the <strong>' + result.tierLabel.toLowerCase() + '</strong> category under Article 4. Continue to your personalized 10-minute training module to build your training register entry.</p>' +
+    (result.tier === "elevated"
+      ? '<div class="notice notice-error">Elevated exposure typically means AI is influencing decisions about people, or your sector carries additional regulatory weight. Consider pairing training with a compliance review. <a href="mailto:hqe.moreira@gmail.com">Talk to us</a>.</div>'
+      : "") +
+    '<a class="btn btn-primary" href="/module.html">Continue to training module</a>';
+
+  resultEl.scrollIntoView({ behavior: "smooth" });
+});
+</script>
+</body>
+</html>

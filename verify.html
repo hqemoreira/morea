@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verify a Training Register Record | Litrix</title>
+<meta name="description" content="Verify the authenticity of a Litrix EU AI Act Article 4 training register entry using its verification code.">
+<link rel="canonical" href="https://litrix.eu/verify.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container-wide">
+    <a class="wordmark" href="/">Litrix<span class="article4">Article 4 · AI Literacy</span></a>
+    <nav class="site-nav"><a href="/login.html">Log in</a></nav>
+  </div>
+</header>
+
+<main class="container" style="max-width:560px; padding: 48px 24px 70px;">
+  <h1>Verify a training record</h1>
+  <p>Enter a Litrix verification code to confirm a training register entry is genuine. No account required.</p>
+
+  <form id="verify-form" class="dossier">
+    <label for="code">Verification code</label>
+    <input type="text" id="code" name="code" class="mono" placeholder="LTRX-XXXX-XXXX-XXXX-XXXX-XXXX" required>
+    <button type="submit" class="btn btn-primary btn-block">Verify</button>
+  </form>
+
+  <section id="result" style="margin-top:24px; display:none;"></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container"><p>Litrix &middot; EU AI Act Article 4 compliance and literacy platform</p></div>
+</footer>
+
+<script>
+const form = document.getElementById("verify-form");
+const resultEl = document.getElementById("result");
+
+const params = new URLSearchParams(window.location.search);
+if (params.get("code")) {
+  document.getElementById("code").value = params.get("code");
+  lookup(params.get("code"));
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  lookup(document.getElementById("code").value.trim());
+});
+
+async function lookup(code) {
+  resultEl.style.display = "block";
+  resultEl.innerHTML = '<div class="dossier">Checking&hellip;</div>';
+
+  try {
+    const res = await fetch("/api/verify?code=" + encodeURIComponent(code));
+    const data = await res.json();
+
+    if (!res.ok) {
+      resultEl.innerHTML = '<div class="dossier notice-error notice">' + (data.error || "No record found.") + "</div>";
+      return;
+    }
+
+    const e = data.entry;
+    resultEl.innerHTML =
+      '<div class="dossier">' +
+      '<p class="dossier-label">Verified record</p>' +
+      '<div class="stamp stamp-low" style="border-color:#2f4a3d;color:#2f4a3d;">Genuine record</div>' +
+      "<table style=\"margin-top:18px;\">" +
+      "<tr><th>Verification code</th><td class=\"mono\">" + e.verification_code + "</td></tr>" +
+      "<tr><th>Organization</th><td>" + e.organization + "</td></tr>" +
+      "<tr><th>Sector</th><td>" + e.sector + "</td></tr>" +
+      "<tr><th>Exposure tier</th><td>" + (e.tier || "—") + "</td></tr>" +
+      "<tr><th>Completed</th><td>" + new Date(e.completed_at).toLocaleString() + "</td></tr>" +
+      "<tr><th>Comprehension check</th><td>" + e.quiz_score + " / " + e.quiz_total + "</td></tr>" +
+      "</table></div>";
+  } catch (err) {
+    resultEl.innerHTML = '<div class="dossier notice notice-error">Something went wrong. Try again.</div>';
+  }
+}
+</script>
+</body>
+</html>
