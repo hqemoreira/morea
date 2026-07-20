@@ -4,9 +4,9 @@ const { Client } = require("@neondatabase/serverless");
 
 loadEnvLocal();
 
-const connectionString = process.env.DATABASE_URL;
+const connectionString = process.env.NEON_DATABASE_URL;
 if (!connectionString) {
-  console.error("DATABASE_URL is not set. Add it to .env.local or export it before running.");
+  console.error("NEON_DATABASE_URL is not set. Add it to .env.local or export it before running.");
   process.exit(1);
 }
 
