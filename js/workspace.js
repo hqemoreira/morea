@@ -47,8 +47,8 @@
     .join("");
 
   contentEl.innerHTML =
-    "<h1>" + escapeHtml(seats.company.name) + " &mdash; workspace</h1>" +
-    '<p class="faint">' + seats.members.length + " / " + seats.company.seat_limit + " seats used</p>" +
+    "<h1>" + escapeHtml(seats.company.name) + " &mdash; shared demo register</h1>" +
+    '<p class="faint">' + seats.members.length + " / " + seats.company.seat_limit + " demo seats · learning only · not a commercial product</p>" +
     '<div class="dossier">' +
     "<h2>Living training register</h2>" +
     (registerRows
@@ -56,7 +56,7 @@
       : "<p>No completed training records yet.</p>") +
     "</div>" +
     '<div class="dossier">' +
-    "<h2>Team</h2>" +
+    "<h2>Demo participants</h2>" +
     "<table><tr><th>Name</th><th>Email</th><th>Role</th></tr>" + membersRows + "</table>" +
     (seats.isAdmin
       ? '<div id="invite-area" style="margin-top:20px;"><button class="btn btn-primary" id="invite-btn">Invite teammate</button><div id="invite-result"></div></div>'

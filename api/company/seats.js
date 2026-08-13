@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
 
   const user = await getSessionUser(req);
   if (!user || !user.company_id) {
-    res.status(401).json({ error: "Log in to a company workspace to view seats." });
+    res.status(401).json({ error: "Log in to a shared demo register to view seats." });
     return;
   }
 

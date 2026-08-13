@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
 
   const user = await getSessionUser(req);
   if (!user || !user.company_id) {
-    res.status(401).json({ error: "Log in as a company owner or admin to invite teammates." });
+    res.status(401).json({ error: "Log in as a demo register owner or admin to invite teammates." });
     return;
   }
   if (user.role !== "owner" && user.role !== "admin") {
@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
   const [{ pending }] = await sql`SELECT count(*)::int AS pending FROM invites WHERE company_id = ${user.company_id} AND used_at IS NULL AND expires_at > now()`;
 
   if (count + pending >= company.seat_limit) {
-    res.status(400).json({ error: "Seat limit reached for this workspace." });
+    res.status(400).json({ error: "Demo seat limit reached for this learning register." });
     return;
   }
 

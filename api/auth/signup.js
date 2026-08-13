@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
     return;
   }
   if (accountType === "company" && !companyName) {
-    res.status(400).json({ error: "Company name is required." });
+    res.status(400).json({ error: "Demo group name is required." });
     return;
   }
 
