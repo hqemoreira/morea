@@ -1,10 +1,10 @@
-node_modules/
 .env
-.env.local
-.vercel
+.env.*
+.vercel/
+node_modules/
+dist/
+build/
+.next/
 *.log
 .DS_Store
-
-.vercel
-.env*
 .claude/settings.local.json
