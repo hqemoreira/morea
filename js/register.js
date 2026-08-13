@@ -91,15 +91,15 @@
         body: JSON.stringify(entry)
       });
       if (saveRes.ok) {
-        statusEl.innerHTML = '<div class="notice">Saved to your training register' + (sessionData.user.company_id ? " and shared with your company workspace." : ".") + '</div>';
+        statusEl.innerHTML = '<div class="notice">Saved to your training register' + (sessionData.user.company_id ? " and shared with your shared demo register." : ".") + '</div>';
       } else {
         statusEl.innerHTML = '<div class="notice notice-error">Could not save to your account. Your local export above is still valid.</div>';
       }
     } else {
       statusEl.innerHTML =
-        '<div class="notice">This copy exists only in your browser. <a href="/signup.html">Create an account</a> or <a href="/login.html">log in</a> to keep a permanent copy in your training register.</div>';
+        '<div class="notice">This copy exists only in your browser. <a href="/signup.html">Create a demo login</a> or <a href="/login.html">log in</a> to keep a permanent copy in your training register.</div>';
     }
   } catch (err) {
-    statusEl.innerHTML = '<div class="notice">This copy exists only in your browser. <a href="/signup.html">Create an account</a> to keep a permanent copy.</div>';
+    statusEl.innerHTML = '<div class="notice">This copy exists only in your browser. <a href="/signup.html">Create a demo login</a> to keep a permanent copy.</div>';
   }
 })();

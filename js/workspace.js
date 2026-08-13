@@ -8,7 +8,7 @@
   }
   if (!sessionData.user.company_id) {
     document.getElementById("workspace-content").innerHTML =
-      '<div class="dossier notice notice-error">This account isn\'t part of a company workspace. <a href="/signup.html">Create a company account</a> to get one.</div>';
+      '<div class="dossier notice notice-error">This account isn\'t part of a shared demo register. <a href="/signup.html">Create a shared demo register</a> to practise multi-user learning flows.</div>';
     return;
   }
 

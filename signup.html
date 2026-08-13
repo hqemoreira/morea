@@ -21,7 +21,7 @@
       <span class="wordmark-text">Litrix<span class="article4">Article 4 · AI Literacy</span></span>
     </a>
     <nav class="site-nav">
-      <a href="/login.html">Log in</a>
+      <a href="/login.html">Demo login</a>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
     </nav>
   </div>
@@ -30,12 +30,13 @@
 <main class="container" style="max-width:520px; padding: 48px 24px 70px;">
   <h1 id="page-title">Create a demo account</h1>
   <p id="page-sub" class="faint">Learning prototype — no payment, no subscription.</p>
+  <p class="faint">Non-commercial learning prototype · not a commercial product · no payment</p>
 
   <form id="signup-form" class="dossier">
     <div id="account-type-field">
       <label>Account type</label>
       <label class="option-row"><input type="radio" name="accountType" value="individual" checked> Individual (demo)</label>
-      <label class="option-row"><input type="radio" name="accountType" value="company"> Company workspace (demo)</label>
+      <label class="option-row"><input type="radio" name="accountType" value="company"> Shared demo register (learning)</label>
     </div>
 
     <div id="company-name-field" style="display:none;">
@@ -54,10 +55,10 @@
 
     <div id="form-error"></div>
 
-    <button type="submit" class="btn btn-primary btn-block">Create account</button>
+    <button type="submit" class="btn btn-primary btn-block">Create demo login</button>
   </form>
 
-  <p class="faint" style="margin-top:16px;">Already have an account? <a href="/login.html">Log in</a></p>
+  <p class="faint" style="margin-top:16px;">Already have a demo login? <a href="/login.html">Log in</a></p>
 </main>
 
 <footer class="site-footer">
@@ -78,8 +79,8 @@ const inviteToken = params.get("invite");
 const form = document.getElementById("signup-form");
 
 if (inviteToken) {
-  document.getElementById("page-title").textContent = "Join your company's workspace";
-  document.getElementById("page-sub").textContent = "You've been invited to join a Litrix company register.";
+  document.getElementById("page-title").textContent = "Join a shared demo register";
+  document.getElementById("page-sub").textContent = "You've been invited to a Litrix learning demo register.";
   document.getElementById("account-type-field").style.display = "none";
   document.getElementById("company-name-field").style.display = "none";
 }
