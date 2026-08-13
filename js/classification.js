@@ -37,7 +37,7 @@ const LITRIX_QUESTIONS = [
     id: "role",
     label: "What's your role?",
     options: [
-      { value: "founder", label: "Founder / executive", points: 0 },
+      { value: "founder", label: "Executive / business owner", points: 0 },
       { value: "hr", label: "HR / people", points: 0 },
       { value: "it", label: "IT / engineering", points: 0 },
       { value: "compliance", label: "Compliance / legal", points: 0 },
