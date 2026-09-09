@@ -23,3 +23,7 @@ Typical flow: intake → deterministic Article 4 classification → short litera
 ## Docs
 
 Project context for agents: [`CLAUDE.md`](./CLAUDE.md).
+
+## License
+
+Proprietary — see [`LICENSE`](./LICENSE). All rights reserved.
