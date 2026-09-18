@@ -10,6 +10,7 @@ Non-commercial learning demo for EU AI Act Article 4 literacy and training-regis
 - **GitHub front door:** public `README.md` (posture + stack + how to run); architecture stays in this file (`CLAUDE.md`). Proprietary `LICENSE` harmonized with sibling portfolio repos.
 
 ### Changelog — 2026-09
+- **2026-09-18 (Forge s20):** CLAUDE.md synced with Forge journals — remain archive (noindex / Portfolio-card-only); architecture doc stays this file.
 - Public README shipped as GitHub front door (posture + stack + how to run); architecture stays in this CLAUDE.md.
 - Proprietary LICENSE harmonized across the portfolio (same wording family as sibling repos).
 - Archive products (Velu, Grantemia, LYCAON, DisclAI, Litrix, Iraun): still Allow+/noindex; Portfolio card discovery only.
