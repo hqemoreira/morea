@@ -10,6 +10,7 @@ Non-commercial learning demo for EU AI Act Article 4 literacy and training-regis
 - **GitHub front door:** public `README.md` (posture + stack + how to run); architecture stays in this file (`CLAUDE.md`). Proprietary `LICENSE` harmonized with sibling portfolio repos.
 
 ### Changelog — 2026-09
+- **2026-09-18 (Forge s22):** CLAUDE.md synced with Forge journals — GitHub owner `hqemoreira` (legacy `ghostcat0to1` redirects); remain archive (noindex / Portfolio-card-only); architecture doc stays this file.
 - **2026-09-18 (Forge s20):** CLAUDE.md synced with Forge journals — remain archive (noindex / Portfolio-card-only); architecture doc stays this file.
 - Public README shipped as GitHub front door (posture + stack + how to run); architecture stays in this CLAUDE.md.
 - Proprietary LICENSE harmonized across the portfolio (same wording family as sibling repos).
@@ -21,7 +22,7 @@ Non-commercial learning demo for EU AI Act Article 4 literacy and training-regis
 **The demo object is the record.** Article 4 of the EU AI Act makes AI literacy mandatory for every company deploying AI in the EU. Article 4 is a Chapter I general provision under Article 113's phased rollout and has applied since **2 February 2025** (alongside the Article 5 prohibitions) — not August 2026, which is when the bulk of separate high-risk/Annex III obligations apply. Messaging for the demo: “you are already required to comply,” not “prepare for an upcoming deadline.” The learning hook is a dated, SHA-256-verified, exportable training register entry — educational, not a paid annual seat ladder on the public surface.
 
 ## Repo / domain / infra
-- GitHub: `ghostcat0to1/litrix`
+- GitHub: `hqemoreira/litrix` (legacy `ghostcat0to1/litrix` redirects)
 - Live demo host (only public URL): **https://litrixeu.vercel.app**. Do not invent a separate brand domain.
 - Hosting: Vercel, no build step, plain HTML/JS, one serverless function.
 - AI inference: **Mistral API**, model `mistral-small-latest`, JSON mode, env var `MISTRAL_API_KEY`. (Originally scaffolded on Gemini, migrated to Mistral — if you see Gemini references anywhere, they're stale.)
