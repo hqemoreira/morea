@@ -22,7 +22,7 @@ Non-commercial learning demo for EU AI Act Article 4 literacy and training-regis
 
 ## Repo / domain / infra
 - GitHub: `ghostcat0to1/litrix`
-- Domain: **litrix.eu** is the brand (EU regulation = Brussels credibility, not geographic). `litrix.fi` is registered separately at Domainhotelli purely as a cheap redirect for Finnish trust — never the primary domain. Live demo host today: `litrixeu.vercel.app`.
+- Live demo host (only public URL): **https://litrixeu.vercel.app**. Do not invent a separate brand domain.
 - Hosting: Vercel, no build step, plain HTML/JS, one serverless function.
 - AI inference: **Mistral API**, model `mistral-small-latest`, JSON mode, env var `MISTRAL_API_KEY`. (Originally scaffolded on Gemini, migrated to Mistral — if you see Gemini references anywhere, they're stale.)
 - DNS/master domain for mail etc: henriquemoreira.eu via Cloudflare (shared pattern across Henrique's products).
@@ -57,4 +57,4 @@ Deliberately **not** Forge Fire. IBM Plex font family, paper-and-ink regulatory 
 ## Working style reminders
 - Henrique wants decisive recommendations and clean execution, not menus of options.
 - Zero-cost constraint is real — don't introduce paid infra without flagging cost first.
-- Don't rename Litrix, don't second-guess litrix.eu as the brand domain.
+- Don't rename Litrix. Only claim the live URL https://litrixeu.vercel.app — never invent a brand domain.

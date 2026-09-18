@@ -37,7 +37,7 @@ module.exports = async (req, res) => {
     VALUES (${token}, ${user.company_id}, 'member', ${expiresAt.toISOString()}, ${user.id})
   `;
 
-  const host = req.headers.host || "litrix.eu";
+  const host = req.headers.host || "litrixeu.vercel.app";
   const protocol = host.startsWith("localhost") || host.startsWith("127.0.0.1") ? "http" : "https";
   const link = protocol + "://" + host + "/signup.html?invite=" + token;
 

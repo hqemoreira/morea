@@ -6,9 +6,9 @@
 - Article 4 (AI literacy) applies since 2 February 2025 — a Chapter I general provision, not part of the 2 August 2026 high-risk obligations.
 - Applies to any provider or deployer of an AI system in the EU; no SME exemption.
 - Non-compliance with general obligations (including Article 4) can be penalized under Article 99(4) up to €15 million or 3% of global annual turnover.
-- Litrix's training register entries are independently verifiable at https://litrix.eu/verify.html by verification code, without requiring an account.
+- Litrix's training register entries are independently verifiable at https://litrixeu.vercel.app/verify.html by verification code, without requiring an account.
 
 ## Pages
-- [Homepage](https://litrix.eu/): product overview and Article 4 FAQ
-- [Free assessment](https://litrix.eu/assess.html): 6-question intake and exposure classification
-- [Verify a record](https://litrix.eu/verify.html): public lookup of a training register entry by verification code
+- [Homepage](https://litrixeu.vercel.app/): product overview and Article 4 FAQ
+- [Free assessment](https://litrixeu.vercel.app/assess.html): 6-question intake and exposure classification
+- [Verify a record](https://litrixeu.vercel.app/verify.html): public lookup of a training register entry by verification code

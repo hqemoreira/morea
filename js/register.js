@@ -64,7 +64,7 @@
     '<button class="btn btn-primary" id="export-btn">Export JSON</button> ' +
     '<button class="btn btn-secondary" id="print-btn">Print</button>' +
     "</p>" +
-    '<p class="faint">Anyone can verify this record at <a href="/verify.html">litrix.eu/verify.html</a> using the code above.</p>' +
+    '<p class="faint">Anyone can verify this record at <a href="/verify.html">litrixeu.vercel.app/verify.html</a> using the code above.</p>' +
     '<div id="save-status"></div>';
 
   document.getElementById("export-btn").addEventListener("click", () => {
