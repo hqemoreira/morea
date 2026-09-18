@@ -2,7 +2,7 @@
 
 Non-commercial learning demo for EU AI Act **Article 4** literacy and training-register practice (European SME contexts). Built in Espoo, Finland. **Not a company SaaS product** — open via the Portfolio card only.
 
-**Live:** [litrixeu.vercel.app](https://litrixeu.vercel.app) · Brand domain: litrix.eu
+**Live:** [litrixeu.vercel.app](https://litrixeu.vercel.app)
 
 ## Demo object
 
