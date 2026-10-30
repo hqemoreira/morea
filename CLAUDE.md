@@ -3,7 +3,7 @@
 ## What this is
 Non-commercial learning demo (**Morea Evidence Pack**) for EU AI Act Article 4 literacy + exportable evidence practice, for European SME / small professional-firm contexts. Built by Henrique (Espoo, Finland). **Not a company SaaS product** — open via the Portfolio card; GRYPS remains the hiring lead.
 
-**Repo folder / Vercel project may still be named `litrix`.** Public UI brand is **Morea**.
+**Local folder / GitHub repo:** `morea` (`hqemoreira/morea`). Vercel project may still be named `litrix` until reconnected. Public UI brand is **Morea**.
 
 ## Public posture
 - Required line: Personal reskilling project · Non-commercial · Not a product for sale · No accounts / no billing
@@ -18,7 +18,7 @@ Article 4 has applied since **2 February 2025**. Softened best-efforts language 
 
 ## Live URL
 - **https://litrixeu.vercel.app** (legacy host name until a Morea domain is chosen)
-- GitHub: `hqemoreira/litrix`
+- GitHub: `hqemoreira/morea` (formerly `litrix`)
 
 ## Current flow (v0.2)
 1. Landing (Morea)
@@ -48,4 +48,4 @@ IBM Plex; paper-and-ink dossier aesthetic. Wordmark subtitle: **Evidence Pack**.
 ## Optional later
 - Neon company workspace (still non-commercial unless status changes)
 - Prompt sovereignty trail module
-- Clean repo rename `litrix` → `morea` + custom domain
+- Custom domain for Morea; reconnect Vercel if project still named `litrix`
