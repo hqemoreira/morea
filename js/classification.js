@@ -1,5 +1,5 @@
-// Deterministic Article 4 exposure classification — no API call, runs entirely client-side.
-const LITRIX_QUESTIONS = [
+// Deterministic Article 4 exposure classification — client-side only.
+const MOREA_QUESTIONS = [
   {
     id: "size",
     label: "How many people work at your company?",
@@ -35,13 +35,14 @@ const LITRIX_QUESTIONS = [
   },
   {
     id: "role",
-    label: "What's your role?",
+    label: "What's your role track for this literacy path?",
     options: [
+      { value: "partner_ops", label: "Partner / ops lead (sets policy, accountable for measures)", points: 0 },
       { value: "founder", label: "Executive / business owner", points: 0 },
-      { value: "hr", label: "HR / people", points: 0 },
-      { value: "it", label: "IT / engineering", points: 0 },
       { value: "compliance", label: "Compliance / legal", points: 0 },
-      { value: "other", label: "Other staff", points: 0 }
+      { value: "hr", label: "Staff — HR / people", points: 0 },
+      { value: "it", label: "Staff — IT / engineering", points: 0 },
+      { value: "other", label: "Staff — other AI user", points: 0 }
     ]
   },
   {
@@ -64,11 +65,13 @@ const LITRIX_QUESTIONS = [
   }
 ];
 
-// Thresholds are a starting point tuned for MVP launch, not legal advice — revisit as enforcement guidance clarifies.
-function litrixClassify(answers) {
+// Legacy alias for older scripts
+const LITRIX_QUESTIONS = MOREA_QUESTIONS;
+
+function moreaClassify(answers) {
   let score = 0;
   const optionLabels = {};
-  for (const q of LITRIX_QUESTIONS) {
+  for (const q of MOREA_QUESTIONS) {
     const chosen = q.options.find((o) => o.value === answers[q.id]);
     if (chosen) {
       score += chosen.points;
@@ -88,5 +91,24 @@ function litrixClassify(answers) {
     tierLabel = "Low exposure";
   }
 
-  return { score, tier, tierLabel, answers, optionLabels, classifiedAt: new Date().toISOString() };
+  const track =
+    answers.role === "partner_ops" ||
+    answers.role === "founder" ||
+    answers.role === "compliance"
+      ? "partner_ops"
+      : "staff";
+
+  return {
+    score,
+    tier,
+    tierLabel,
+    track,
+    answers,
+    optionLabels,
+    classifiedAt: new Date().toISOString()
+  };
+}
+
+function litrixClassify(answers) {
+  return moreaClassify(answers);
 }

@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){try{var t=localStorage.getItem("litrix-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
-<title>Article 4 exposure demo | Litrix</title>
-<meta name="description" content="Six questions. Instant EU AI Act Article 4 exposure classification. No account required.">
+<script>(function(){try{var t=(localStorage.getItem("morea-theme")||localStorage.getItem("litrix-theme"));if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<title>Exposure intake | Morea Evidence Pack</title>
+<meta name="description" content="Six questions. Instant EU AI Act Article 4 exposure classification. Educational Morea prototype.">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://litrixeu.vercel.app/assess.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,55 +18,58 @@
 <header class="site-header">
   <div class="container-wide">
     <a class="wordmark" href="/">
-      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 9h4v10h6v4H11V9z" fill="currentColor"/></svg>
-      <span class="wordmark-text">Litrix<span class="article4">Article 4 · AI Literacy</span></span>
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 22V10h3.2c2.4 0 3.9 1.2 3.9 3.1 0 1.3-.7 2.3-1.9 2.8L16.2 22h-3.1l-2.6-5.4H11V22H8zm3-8.2h.5c.9 0 1.4-.5 1.4-1.2S12.4 11.4 11.5 11.4H11v2.4zM18.5 22l3.2-12h3.1L28 22h-3.2l-.5-2.1h-3.6L20.2 22h-1.7zm4.1-4.7h2.4l-1.2-4.5-1.2 4.5z" fill="currentColor"/></svg>
+      <span class="wordmark-text">Morea<span class="article4">Evidence Pack</span></span>
     </a>
     <nav class="site-nav">
-      <a href="/verify.html">Verify a Record</a>
-      <a href="/login.html">Demo login</a>
+      <a href="/verify.html">Verify a pack</a>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
     </nav>
   </div>
 </header>
 
 <main class="container" style="padding: 48px 24px 70px;">
-  <p class="dossier-label">Personal reskilling · Non-commercial · Learning demo</p>
-  <h1>Illustrative Article 4 exposure walkthrough</h1>
-  <p>Six questions. Answers are scored instantly in your browser — nothing is sent anywhere until you choose to save a demo training record. Educational only — not a compliance assessment for a real organization.</p>
+  <p class="dossier-label">Step 2 of 5 &middot; Personal reskilling · Non-commercial · Learning demo</p>
+  <h1>Illustrative Article 4 exposure intake</h1>
+  <p>Six questions. Scored instantly in your browser. Educational only — not a compliance assessment for a real organisation.</p>
 
   <form id="assess-form" class="dossier"></form>
-
   <section id="result" class="dossier" style="display: none; margin-top: 24px;"></section>
 </main>
 
 <footer class="site-footer">
   <div class="container-wide site-footer-bar">
-    <a class="footer-mark" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 9h4v10h6v4H11V9z" fill="currentColor"/></svg>Litrix</a>
-    <p class="footer-status">&copy; 2026 Litrix &middot; Espoo, Finland &middot; Personal reskilling · Non-commercial · Not a product for sale</p>
+    <a class="footer-mark" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 22V10h3.2c2.4 0 3.9 1.2 3.9 3.1 0 1.3-.7 2.3-1.9 2.8L16.2 22h-3.1l-2.6-5.4H11V22H8zm3-8.2h.5c.9 0 1.4-.5 1.4-1.2S12.4 11.4 11.5 11.4H11v2.4zM18.5 22l3.2-12h3.1L28 22h-3.2l-.5-2.1h-3.6L20.2 22h-1.7zm4.1-4.7h2.4l-1.2-4.5-1.2 4.5z" fill="currentColor"/></svg>Morea</a>
+    <p class="footer-status">&copy; 2026 Morea &middot; Espoo, Finland &middot; Personal reskilling · Non-commercial · Not a product for sale</p>
     <nav class="footer-links">
       <a href="/terms.html">Terms</a>
       <a href="/privacy.html">Privacy</a>
     </nav>
-    <p class="footer-tagline">Built in Finland as an educational EU AI Act literacy demo.</p>
+    <p class="footer-tagline">Evidence you can show — educational EU AI Act literacy trail.</p>
   </div>
 </footer>
 
 <script src="/js/theme.js"></script>
+<script src="/js/storage.js"></script>
 <script src="/js/classification.js"></script>
 <script>
+if (!MoreaStore.get("inventory")) {
+  window.location.href = "/inventory.html";
+}
+
 const form = document.getElementById("assess-form");
 
-LITRIX_QUESTIONS.forEach((q, qi) => {
+MOREA_QUESTIONS.forEach((q, qi) => {
   const fieldset = document.createElement("fieldset");
   const legend = document.createElement("legend");
-  legend.textContent = "Question " + (qi + 1) + " of " + LITRIX_QUESTIONS.length;
+  legend.textContent = "Question " + (qi + 1) + " of " + MOREA_QUESTIONS.length;
   fieldset.appendChild(legend);
 
   const label = document.createElement("h3");
   label.textContent = q.label;
   fieldset.appendChild(label);
 
-  q.options.forEach((opt, oi) => {
+  q.options.forEach((opt) => {
     const row = document.createElement("label");
     row.className = "option-row";
     const input = document.createElement("input");
@@ -73,7 +77,6 @@ LITRIX_QUESTIONS.forEach((q, qi) => {
     input.name = q.id;
     input.value = opt.value;
     input.required = true;
-    if (oi === 0) input.dataset.first = "true";
     row.appendChild(input);
     row.appendChild(document.createTextNode(opt.label));
     fieldset.appendChild(row);
@@ -92,21 +95,22 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   const data = new FormData(form);
   const answers = {};
-  for (const q of LITRIX_QUESTIONS) answers[q.id] = data.get(q.id);
+  for (const q of MOREA_QUESTIONS) answers[q.id] = data.get(q.id);
 
-  const result = litrixClassify(answers);
-  sessionStorage.setItem("litrix_intake", JSON.stringify(result));
+  const result = moreaClassify(answers);
+  MoreaStore.setJSON("intake", result);
 
   const resultEl = document.getElementById("result");
   resultEl.style.display = "block";
+  const trackLabel = result.track === "partner_ops" ? "Partner / ops" : "Staff user";
   resultEl.innerHTML =
     '<p class="dossier-label">Your result</p>' +
     '<div class="stamp stamp-' + result.tier + '">' + result.tierLabel + '</div>' +
-    '<p style="margin-top:18px;">Based on your answers, your organization falls into the <strong>' + result.tierLabel.toLowerCase() + '</strong> category under Article 4. Continue to your personalized 10-minute training module to build your training register entry.</p>' +
+    '<p style="margin-top:18px;">Illustrative exposure: <strong>' + result.tierLabel.toLowerCase() + '</strong>. Literacy track: <strong>' + trackLabel + '</strong>. Continue to your personalized module.</p>' +
     (result.tier === "elevated"
-      ? '<div class="notice notice-error">Elevated exposure typically means AI is influencing decisions about people, or your sector carries additional regulatory weight. Consider pairing training with a compliance review. <a href="mailto:hqe.moreira@gmail.com">Talk to us</a>.</div>'
+      ? '<div class="notice">Elevated exposure usually means AI influences decisions about people or a higher-scrutiny sector. This demo does not replace a real compliance review.</div>'
       : "") +
-    '<a class="btn btn-primary" href="/module.html">Continue to training module</a>';
+    '<a class="btn btn-primary" href="/module.html">Continue to literacy module</a>';
 
   resultEl.scrollIntoView({ behavior: "smooth" });
 });

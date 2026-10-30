@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){try{var t=localStorage.getItem("litrix-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
-<title>Create a demo account | Litrix</title>
-<meta name="description" content="Learning prototype — no payment, no subscription.">
+<script>(function(){try{var t=(localStorage.getItem("morea-theme")||localStorage.getItem("litrix-theme"));if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<title>Optional demo signup | Morea</title>
+<meta name="description" content="Learning prototype — no payment, no subscription. Not a product for sale.">
+<meta name="robots" content="noindex">
 <link rel="canonical" href="https://litrixeu.vercel.app/signup.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,7 @@
   <div class="container-wide">
     <a class="wordmark" href="/">
       <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 9h4v10h6v4H11V9z" fill="currentColor"/></svg>
-      <span class="wordmark-text">Litrix<span class="article4">Article 4 · AI Literacy</span></span>
+      <span class="wordmark-text">Morea<span class="article4">Evidence Pack</span></span>
     </a>
     <nav class="site-nav">
       <a href="/login.html">Demo login</a>
@@ -28,9 +29,8 @@
 </header>
 
 <main class="container" style="max-width:520px; padding: 48px 24px 70px;">
-  <h1 id="page-title">Create a demo account</h1>
-  <p id="page-sub" class="faint">Learning prototype — no payment, no subscription.</p>
-  <p class="faint">Non-commercial learning prototype · not a commercial product · no payment</p>
+  <h1 id="page-title">Optional demo login</h1>
+  <p id="page-sub" class="faint">Personal reskilling · Non-commercial · Not a product for sale · No billing. Evidence Pack works without an account.</p>
 
   <form id="signup-form" class="dossier">
     <div id="account-type-field">
@@ -55,7 +55,7 @@
 
     <div id="form-error"></div>
 
-    <button type="submit" class="btn btn-primary btn-block">Create demo login</button>
+    <button type="submit" class="btn btn-primary btn-block">Optional demo login</button>
   </form>
 
   <p class="faint" style="margin-top:16px;">Already have a demo login? <a href="/login.html">Log in</a></p>
@@ -63,13 +63,13 @@
 
 <footer class="site-footer">
   <div class="container-wide site-footer-bar">
-    <a class="footer-mark" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 9h4v10h6v4H11V9z" fill="currentColor"/></svg>Litrix</a>
-    <p class="footer-status">&copy; 2026 Litrix &middot; Espoo, Finland &middot; No registered company &middot; No revenue generated</p>
+    <a class="footer-mark" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 9h4v10h6v4H11V9z" fill="currentColor"/></svg>Morea</a>
+    <p class="footer-status">&copy; 2026 Morea &middot; Espoo, Finland &middot; Personal reskilling · Non-commercial · Not a product for sale</p>
     <nav class="footer-links">
       <a href="/terms.html">Terms</a>
       <a href="/privacy.html">Privacy</a>
     </nav>
-    <p class="footer-tagline">Built in Finland for EU AI Act compliance.</p>
+    <p class="footer-tagline">Evidence you can show — educational EU AI Act literacy trail.</p>
   </div>
 </footer>
 
@@ -80,7 +80,7 @@ const form = document.getElementById("signup-form");
 
 if (inviteToken) {
   document.getElementById("page-title").textContent = "Join a shared demo register";
-  document.getElementById("page-sub").textContent = "You've been invited to a Litrix learning demo register.";
+  document.getElementById("page-sub").textContent = "You've been invited to a Morea learning demo register.";
   document.getElementById("account-type-field").style.display = "none";
   document.getElementById("company-name-field").style.display = "none";
 }
@@ -126,7 +126,7 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
-  if (sessionStorage.getItem("litrix_quiz")) {
+  if (sessionStorage.getItem("morea_quiz") || sessionStorage.getItem("litrix_quiz")) {
     window.location.href = "/register.html";
   } else if (data.user && data.user.company_id) {
     window.location.href = "/workspace.html";

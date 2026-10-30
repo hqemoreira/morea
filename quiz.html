@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){try{var t=localStorage.getItem("litrix-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
-<title>Comprehension Check | Litrix</title>
+<script>(function(){try{var t=(localStorage.getItem("morea-theme")||localStorage.getItem("litrix-theme"));if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<title>Comprehension check | Morea Evidence Pack</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,48 +16,56 @@
 <header class="site-header">
   <div class="container-wide">
     <a class="wordmark" href="/">
-      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 9h4v10h6v4H11V9z" fill="currentColor"/></svg>
-      <span class="wordmark-text">Litrix<span class="article4">Article 4 · AI Literacy</span></span>
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 22V10h3.2c2.4 0 3.9 1.2 3.9 3.1 0 1.3-.7 2.3-1.9 2.8L16.2 22h-3.1l-2.6-5.4H11V22H8zm3-8.2h.5c.9 0 1.4-.5 1.4-1.2S12.4 11.4 11.5 11.4H11v2.4zM18.5 22l3.2-12h3.1L28 22h-3.2l-.5-2.1h-3.6L20.2 22h-1.7zm4.1-4.7h2.4l-1.2-4.5-1.2 4.5z" fill="currentColor"/></svg>
+      <span class="wordmark-text">Morea<span class="article4">Evidence Pack</span></span>
     </a>
     <nav class="site-nav">
-      <a href="/login.html">Demo login</a>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
     </nav>
   </div>
 </header>
 
 <main class="container" style="padding: 48px 24px 70px;">
-  <p class="dossier-label">Step 3 of 4 &middot; Comprehension check</p>
-  <h1>Three quick questions</h1>
+  <p class="dossier-label">Step 3 of 5 &middot; Comprehension check</p>
+  <h1 id="quiz-title">Three quick questions</h1>
   <form id="quiz-form" class="dossier"></form>
   <section id="result" class="dossier" style="display:none; margin-top:24px;"></section>
 </main>
 
 <footer class="site-footer">
   <div class="container-wide site-footer-bar">
-    <a class="footer-mark" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 9h4v10h6v4H11V9z" fill="currentColor"/></svg>Litrix</a>
-    <p class="footer-status">&copy; 2026 Litrix &middot; Espoo, Finland &middot; No registered company &middot; No revenue generated</p>
+    <a class="footer-mark" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 22V10h3.2c2.4 0 3.9 1.2 3.9 3.1 0 1.3-.7 2.3-1.9 2.8L16.2 22h-3.1l-2.6-5.4H11V22H8zm3-8.2h.5c.9 0 1.4-.5 1.4-1.2S12.4 11.4 11.5 11.4H11v2.4zM18.5 22l3.2-12h3.1L28 22h-3.2l-.5-2.1h-3.6L20.2 22h-1.7zm4.1-4.7h2.4l-1.2-4.5-1.2 4.5z" fill="currentColor"/></svg>Morea</a>
+    <p class="footer-status">&copy; 2026 Morea &middot; Espoo, Finland &middot; Personal reskilling · Non-commercial · Not a product for sale</p>
     <nav class="footer-links">
       <a href="/terms.html">Terms</a>
       <a href="/privacy.html">Privacy</a>
     </nav>
-    <p class="footer-tagline">Built in Finland for EU AI Act compliance.</p>
+    <p class="footer-tagline">Evidence you can show — educational EU AI Act literacy trail.</p>
   </div>
 </footer>
 
 <script src="/js/theme.js"></script>
+<script src="/js/storage.js"></script>
 <script src="/js/quiz.js"></script>
 <script>
-if (!sessionStorage.getItem("litrix_intake")) {
-  window.location.href = "/assess.html";
+const intake = MoreaStore.getJSON("intake");
+if (!intake) {
+  window.location.href = "/inventory.html";
 }
+
+const track = intake.track || MoreaStore.trackFromRole(intake.answers && intake.answers.role);
+const QUIZ = moreaQuizForTrack(track);
+document.getElementById("quiz-title").textContent =
+  track === "partner_ops"
+    ? "Partner / ops — three questions"
+    : "Staff user — three questions";
 
 const form = document.getElementById("quiz-form");
 
-LITRIX_QUIZ.forEach((q, qi) => {
+QUIZ.forEach((q, qi) => {
   const fieldset = document.createElement("fieldset");
   const legend = document.createElement("legend");
-  legend.textContent = "Question " + (qi + 1) + " of " + LITRIX_QUIZ.length;
+  legend.textContent = "Question " + (qi + 1) + " of " + QUIZ.length;
   fieldset.appendChild(legend);
 
   const label = document.createElement("h3");
@@ -91,7 +99,7 @@ form.addEventListener("submit", (e) => {
   const data = new FormData(form);
   let correctCount = 0;
 
-  LITRIX_QUIZ.forEach((q) => {
+  QUIZ.forEach((q) => {
     const chosen = data.get(q.id);
     const correctOpt = q.options.find((o) => o.correct);
     if (chosen === correctOpt.value) correctCount++;
@@ -99,23 +107,24 @@ form.addEventListener("submit", (e) => {
 
   const quizResult = {
     score: correctCount,
-    total: LITRIX_QUIZ.length,
-    passed: correctCount === LITRIX_QUIZ.length,
+    total: QUIZ.length,
+    passed: correctCount === QUIZ.length,
+    track: track,
     completedAt: new Date().toISOString()
   };
-  sessionStorage.setItem("litrix_quiz", JSON.stringify(quizResult));
+  MoreaStore.setJSON("quiz", quizResult);
 
   const resultEl = document.getElementById("result");
   resultEl.style.display = "block";
 
   if (quizResult.passed) {
     resultEl.innerHTML =
-      '<p class="dossier-label">Result</p><h2>' + correctCount + " / " + LITRIX_QUIZ.length + " correct</h2>" +
-      '<p>Comprehension confirmed. Generate your training register entry to complete this record.</p>' +
-      '<a class="btn btn-primary" href="/register.html">Generate training register entry</a>';
+      '<p class="dossier-label">Result</p><h2>' + correctCount + " / " + QUIZ.length + " correct</h2>" +
+      '<p>Comprehension confirmed. Next: optional illustrative policy draft, then your Evidence Pack.</p>' +
+      '<a class="btn btn-primary" href="/policy.html">Continue to policy draft</a>';
   } else {
     resultEl.innerHTML =
-      '<p class="dossier-label">Result</p><h2>' + correctCount + " / " + LITRIX_QUIZ.length + " correct</h2>" +
+      '<p class="dossier-label">Result</p><h2>' + correctCount + " / " + QUIZ.length + " correct</h2>" +
       '<div class="notice notice-error">A couple of answers need another look before this counts as demonstrated comprehension.</div>' +
       '<button class="btn btn-secondary" onclick="window.location.reload()">Try again</button>';
   }

@@ -1,14 +1,15 @@
-# Litrix
+# Morea Evidence Pack
 
-> Litrix is an EU AI Act Article 4 compliance and AI literacy platform for European SMEs. Article 4 of Regulation (EU) 2024/1689 has required AI literacy training for staff operating AI systems since 2 February 2025. Litrix runs a free 6-question exposure assessment, a personalized 10-minute training module, a 3-question comprehension check, and produces a dated, SHA-256-verified training register entry that a company can export or a regulator can verify.
+> Morea is a non-commercial educational research prototype (personal reskilling) for practising an EU AI Act Article 4 literacy Evidence Pack: AI-use inventory, role-aware literacy module, quiz, optional policy draft, and a dated SHA-256-verified export. It is not a compliance service, not legal advice, and not a product for sale. Hosted at https://litrixeu.vercel.app (legacy Litrix host name).
 
 ## Key facts
-- Article 4 (AI literacy) applies since 2 February 2025 — a Chapter I general provision, not part of the 2 August 2026 high-risk obligations.
-- Applies to any provider or deployer of an AI system in the EU; no SME exemption.
-- Non-compliance with general obligations (including Article 4) can be penalized under Article 99(4) up to €15 million or 3% of global annual turnover.
-- Litrix's training register entries are independently verifiable at https://litrixeu.vercel.app/verify.html by verification code, without requiring an account.
+- Article 4 (AI literacy) applies since 2 February 2025.
+- Applies to providers and deployers in the EU; no SME size exemption from the literacy obligation itself.
+- Morea produces an illustrative Evidence Pack for learning — not auditor-grade attestation.
+- Local verification: upload evidence-pack.json at /verify.html. Optional demo code lookup also available.
 
 ## Pages
-- [Homepage](https://litrixeu.vercel.app/): product overview and Article 4 FAQ
-- [Free assessment](https://litrixeu.vercel.app/assess.html): 6-question intake and exposure classification
-- [Verify a record](https://litrixeu.vercel.app/verify.html): public lookup of a training register entry by verification code
+- [Homepage](https://litrixeu.vercel.app/): Morea Evidence Pack overview
+- [Inventory](https://litrixeu.vercel.app/inventory.html): AI-use inventory
+- [Exposure intake](https://litrixeu.vercel.app/assess.html): 6-question classification
+- [Verify](https://litrixeu.vercel.app/verify.html): JSON hash check / demo code lookup

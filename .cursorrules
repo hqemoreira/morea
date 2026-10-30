@@ -1,0 +1,4 @@
+# Security Rules
+- NEVER attempt to read or modify .env or .env.local files.
+- NEVER output live secret keys, passwords, or tokens in chat responses.
+- If an environment variable needs to be updated or added, instruct the user to use the Vercel CLI via 'vercel env add' or the Vercel Web Dashboard.

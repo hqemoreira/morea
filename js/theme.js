@@ -20,7 +20,8 @@
   function setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     try {
-      localStorage.setItem("litrix-theme", theme);
+      localStorage.setItem("morea-theme", theme);
+      try { localStorage.setItem("litrix-theme", theme); } catch (e2) {}
     } catch (e) {}
     updateIcon(theme);
   }

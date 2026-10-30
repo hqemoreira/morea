@@ -1,24 +1,29 @@
-# Litrix
+# Morea Evidence Pack
 
-Non-commercial learning demo for EU AI Act **Article 4** literacy and training-register practice (European SME contexts). Built in Espoo, Finland. **Not a company SaaS product** — open via the Portfolio card only.
+Personal reskilling project · Non-commercial · Not a product for sale · No accounts / no billing.
 
-**Live:** [litrixeu.vercel.app](https://litrixeu.vercel.app)
+Educational prototype for an EU AI Act **Article 4** literacy trail aimed at small European professional firms: inventory AI tools → exposure intake → role-aware module → quiz → optional policy draft → exportable **Evidence Pack**.
+
+**Public brand:** Morea · **Legacy repo / host:** `litrix` / [litrixeu.vercel.app](https://litrixeu.vercel.app)  
+**Not** a compliance service, legal advice, or commercial SaaS.
 
 ## Demo object
 
-The learning hook is a dated, SHA-256-verified, exportable **training register** entry — educational, not a paid seat ladder.
+A dated, SHA-256-verified, exportable **Evidence Pack** (`MOREA-…` code) — educational / illustrative.
 
-Typical flow: intake → deterministic Article 4 classification → short literacy module (Mistral + fallback curriculum) → quiz → register export.
+Flow: inventory → assess → literacy module (Mistral + fallback) → quiz (staff or partner/ops) → policy (optional) → pack export / verify.
 
 ## Posture
 
 - SEO: `Allow: /` + `noindex` / `X-Robots-Tag`
-- Shared demo register / demo-login framing — no pricing or Offer schema
+- Portfolio-card discovery; GRYPS remains the hiring lead
+- Optional demo login is experimental only — not a product account ladder
 
 ## Stack
 
 - Plain HTML / JS on Vercel (no build step)
-- One serverless function · Mistral (`mistral-small-latest`)
+- Serverless functions · Mistral (`mistral-small-latest`)
+- Optional Neon for demo register saves
 
 ## Docs
 

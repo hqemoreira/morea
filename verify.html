@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){try{var t=localStorage.getItem("litrix-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
-<title>Verify a Training Register Record | Litrix</title>
-<meta name="description" content="Verify the authenticity of a Litrix EU AI Act Article 4 training register entry using its verification code.">
+<script>(function(){try{var t=localStorage.getItem("morea-theme")||localStorage.getItem("litrix-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<title>Verify Evidence Pack | Morea</title>
+<meta name="description" content="Verify a Morea Evidence Pack JSON locally or look up a saved demo code. Educational prototype.">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://litrixeu.vercel.app/verify.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,24 +18,32 @@
 <header class="site-header">
   <div class="container-wide">
     <a class="wordmark" href="/">
-      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 9h4v10h6v4H11V9z" fill="currentColor"/></svg>
-      <span class="wordmark-text">Litrix<span class="article4">Article 4 · AI Literacy</span></span>
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 22V10h3.2c2.4 0 3.9 1.2 3.9 3.1 0 1.3-.7 2.3-1.9 2.8L16.2 22h-3.1l-2.6-5.4H11V22H8zm3-8.2h.5c.9 0 1.4-.5 1.4-1.2S12.4 11.4 11.5 11.4H11v2.4zM18.5 22l3.2-12h3.1L28 22h-3.2l-.5-2.1h-3.6L20.2 22h-1.7zm4.1-4.7h2.4l-1.2-4.5-1.2 4.5z" fill="currentColor"/></svg>
+      <span class="wordmark-text">Morea<span class="article4">Evidence Pack</span></span>
     </a>
     <nav class="site-nav">
-      <a href="/login.html">Demo login</a>
+      <a href="/inventory.html">Open prototype</a>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
     </nav>
   </div>
 </header>
 
-<main class="container" style="max-width:560px; padding: 48px 24px 70px;">
-  <h1>Verify a training record</h1>
-  <p>Enter a Litrix verification code to confirm a training register entry is genuine. No account required.</p>
+<main class="container" style="max-width:640px; padding: 48px 24px 70px;">
+  <h1>Verify an Evidence Pack</h1>
+  <p>Educational honesty check: upload a downloaded <code>evidence-pack.json</code> to recompute the hash in your browser, or look up an optional saved demo code. Not auditor-grade attestation.</p>
 
-  <form id="verify-form" class="dossier">
+  <div class="dossier">
+    <h3>1. Verify JSON locally (recommended)</h3>
+    <label for="pack-file">Evidence pack file</label>
+    <input type="file" id="pack-file" accept="application/json,.json">
+    <p class="faint">Runs entirely in your browser. No upload to a server.</p>
+  </div>
+
+  <form id="verify-form" class="dossier" style="margin-top:20px;">
+    <h3>2. Optional demo code lookup</h3>
     <label for="code">Verification code</label>
-    <input type="text" id="code" name="code" class="mono" placeholder="LTRX-XXXX-XXXX-XXXX-XXXX-XXXX" required>
-    <button type="submit" class="btn btn-primary btn-block">Verify</button>
+    <input type="text" id="code" name="code" class="mono" placeholder="MOREA-XXXX-XXXX-XXXX-XXXX-XXXX">
+    <button type="submit" class="btn btn-primary btn-block">Look up demo code</button>
   </form>
 
   <section id="result" style="margin-top:24px; display:none;"></section>
@@ -42,19 +51,64 @@
 
 <footer class="site-footer">
   <div class="container-wide site-footer-bar">
-    <a class="footer-mark" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 9h4v10h6v4H11V9z" fill="currentColor"/></svg>Litrix</a>
-    <p class="footer-status">&copy; 2026 Litrix &middot; Espoo, Finland &middot; No registered company &middot; No revenue generated</p>
+    <a class="footer-mark" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 22V10h3.2c2.4 0 3.9 1.2 3.9 3.1 0 1.3-.7 2.3-1.9 2.8L16.2 22h-3.1l-2.6-5.4H11V22H8zm3-8.2h.5c.9 0 1.4-.5 1.4-1.2S12.4 11.4 11.5 11.4H11v2.4zM18.5 22l3.2-12h3.1L28 22h-3.2l-.5-2.1h-3.6L20.2 22h-1.7zm4.1-4.7h2.4l-1.2-4.5-1.2 4.5z" fill="currentColor"/></svg>Morea</a>
+    <p class="footer-status">&copy; 2026 Morea &middot; Espoo, Finland &middot; Personal reskilling · Non-commercial · Not a product for sale</p>
     <nav class="footer-links">
       <a href="/terms.html">Terms</a>
       <a href="/privacy.html">Privacy</a>
     </nav>
-    <p class="footer-tagline">Built in Finland for EU AI Act compliance.</p>
+    <p class="footer-tagline">Evidence you can show — educational EU AI Act literacy trail.</p>
   </div>
 </footer>
 
 <script>
-const form = document.getElementById("verify-form");
 const resultEl = document.getElementById("result");
+const form = document.getElementById("verify-form");
+
+document.getElementById("pack-file").addEventListener("change", async function (e) {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  resultEl.style.display = "block";
+  resultEl.innerHTML = '<div class="dossier">Checking file&hellip;</div>';
+  try {
+    const text = await file.text();
+    const pack = JSON.parse(text);
+    const code = pack.verification_code;
+    const hashStored = pack.content_hash;
+    const core = Object.assign({}, pack);
+    delete core.verification_code;
+    delete core.content_hash;
+    const canonical = JSON.stringify(core);
+    const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(canonical));
+    const hex = Array.from(new Uint8Array(digest)).map(function (b) {
+      return b.toString(16).padStart(2, "0");
+    }).join("");
+    const expectedCode =
+      "MOREA-" +
+      hex.slice(0, 20).toUpperCase().match(/.{1,4}/g).join("-");
+    const hashOk = !hashStored || hashStored === hex;
+    const codeOk = code === expectedCode;
+    if (hashOk && codeOk) {
+      resultEl.innerHTML =
+        '<div class="dossier">' +
+        '<p class="dossier-label">Local verification</p>' +
+        '<div class="stamp stamp-low">Hash matches</div>' +
+        "<table style=\"margin-top:18px;\">" +
+        '<tr><th>Code</th><td class="mono">' + escapeHtml(code) + "</td></tr>" +
+        "<tr><th>Product</th><td>" + escapeHtml(pack.product || "Morea Evidence Pack") + "</td></tr>" +
+        "<tr><th>Completed</th><td>" + escapeHtml(pack.completed_at || "—") + "</td></tr>" +
+        "<tr><th>Track</th><td>" + escapeHtml((pack.classification && pack.classification.track) || (pack.quiz && pack.quiz.track) || "—") + "</td></tr>" +
+        "<tr><th>Quiz</th><td>" + escapeHtml((pack.quiz && pack.quiz.score) + " / " + (pack.quiz && pack.quiz.total)) + "</td></tr>" +
+        "</table>" +
+        '<p class="faint" style="margin-top:12px;">Illustrative educational pack. Not legal advice or auditor attestation.</p></div>';
+    } else {
+      resultEl.innerHTML =
+        '<div class="dossier notice notice-error">Hash or code does not match this file\'s content. The pack may have been edited after export.</div>';
+    }
+  } catch (err) {
+    resultEl.innerHTML = '<div class="dossier notice notice-error">Could not parse that file as a Morea Evidence Pack.</div>';
+  }
+});
 
 const params = new URLSearchParams(window.location.search);
 if (params.get("code")) {
@@ -62,40 +116,47 @@ if (params.get("code")) {
   lookup(params.get("code"));
 }
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
   lookup(document.getElementById("code").value.trim());
 });
 
 async function lookup(code) {
+  if (!code) return;
   resultEl.style.display = "block";
   resultEl.innerHTML = '<div class="dossier">Checking&hellip;</div>';
-
   try {
     const res = await fetch("/api/verify?code=" + encodeURIComponent(code));
     const data = await res.json();
-
     if (!res.ok) {
-      resultEl.innerHTML = '<div class="dossier notice-error notice">' + (data.error || "No record found.") + "</div>";
+      resultEl.innerHTML =
+        '<div class="dossier notice notice-error">' +
+        escapeHtml(data.error || "No saved demo record found for that code. Try uploading the JSON instead.") +
+        "</div>";
       return;
     }
-
     const e = data.entry;
     resultEl.innerHTML =
       '<div class="dossier">' +
-      '<p class="dossier-label">Verified record</p>' +
-      '<div class="stamp stamp-low">Genuine record</div>' +
+      '<p class="dossier-label">Saved demo record</p>' +
+      '<div class="stamp stamp-low">Found</div>' +
       "<table style=\"margin-top:18px;\">" +
-      "<tr><th>Verification code</th><td class=\"mono\">" + e.verification_code + "</td></tr>" +
-      "<tr><th>Organization</th><td>" + e.organization + "</td></tr>" +
-      "<tr><th>Sector</th><td>" + e.sector + "</td></tr>" +
-      "<tr><th>Exposure tier</th><td>" + (e.tier || "—") + "</td></tr>" +
+      '<tr><th>Verification code</th><td class="mono">' + escapeHtml(e.verification_code) + "</td></tr>" +
+      "<tr><th>Sector</th><td>" + escapeHtml(e.sector) + "</td></tr>" +
+      "<tr><th>Exposure tier</th><td>" + escapeHtml(e.tier || "—") + "</td></tr>" +
       "<tr><th>Completed</th><td>" + new Date(e.completed_at).toLocaleString() + "</td></tr>" +
-      "<tr><th>Comprehension check</th><td>" + e.quiz_score + " / " + e.quiz_total + "</td></tr>" +
-      "</table></div>";
+      "<tr><th>Quiz</th><td>" + e.quiz_score + " / " + e.quiz_total + "</td></tr>" +
+      "</table>" +
+      '<p class="faint" style="margin-top:12px;">Optional server demo save — still educational only.</p></div>';
   } catch (err) {
     resultEl.innerHTML = '<div class="dossier notice notice-error">Something went wrong. Try again.</div>';
   }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str == null ? "" : String(str);
+  return div.innerHTML;
 }
 </script>
 <script src="/js/theme.js"></script>

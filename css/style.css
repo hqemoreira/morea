@@ -1,4 +1,4 @@
-/* Litrix design system — paper-and-ink regulatory dossier aesthetic. IBM Plex family. */
+/* Morea Evidence Pack — paper-and-ink regulatory dossier aesthetic. IBM Plex family. */
 
 :root {
   --paper: #faf8f5;
@@ -437,6 +437,36 @@ footer.site-footer {
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
   .btn:hover { transform: none; }
+}
+
+.inventory-tool {
+  border-bottom: 1px solid var(--rule);
+  padding: 12px 0;
+}
+.inventory-tool:last-of-type { border-bottom: none; }
+.inventory-details {
+  margin: 8px 0 8px 28px;
+  display: grid;
+  gap: 10px;
+}
+.inventory-details[hidden] {
+  display: none !important;
+}
+.inventory-details label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.inventory-details select,
+.inventory-details input[type="text"] {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  background: var(--paper-raised);
+  color: var(--ink);
 }
 
 @media print {
